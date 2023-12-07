@@ -4,7 +4,6 @@ import org.springframework.stereotype.Repository;
 import web.model.Car;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Repository
 public class CarDaoImp implements CarDao {
@@ -19,9 +18,8 @@ public class CarDaoImp implements CarDao {
          carList.add(new Car(5, "Li Auto", "blue"));
      }
 
-
     @Override
     public List<Car> printCarId(int id) {
-        return carList.stream().limit(id).collect(Collectors.toList());
+        return carList;
     }
 }

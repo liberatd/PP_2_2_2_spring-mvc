@@ -5,6 +5,8 @@ import org.springframework.stereotype.Service;
 import web.dao.CarDao;
 import web.model.Car;
 import java.util.List;
+import java.util.stream.Collectors;
+
 
 @Service
 public class CarServiceImp implements CarService {
@@ -16,9 +18,9 @@ public class CarServiceImp implements CarService {
         this.carDao = carDao;
     }
 
-
     @Override
     public List<Car> printCarId(int id) {
-        return carDao.printCarId(id);
+        return carDao.printCarId(id).stream().limit(id).collect(Collectors.toList());
     }
+
 }
