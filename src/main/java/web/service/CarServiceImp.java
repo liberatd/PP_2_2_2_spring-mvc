@@ -20,7 +20,7 @@ public class CarServiceImp implements CarService {
 
     @Override
     public List<Car> printCarId(int id) {
-        return carDao.printCarId(id).stream().limit(id).collect(Collectors.toList());
+        return carDao.printCarId().stream().limit(id).collect(Collectors.toList());
     }
 
 }

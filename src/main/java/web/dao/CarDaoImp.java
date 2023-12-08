@@ -19,7 +19,7 @@ public class CarDaoImp implements CarDao {
      }
 
     @Override
-    public List<Car> printCarId(int id) {
+    public List<Car> printCarId() {
         return carList;
     }
 }
